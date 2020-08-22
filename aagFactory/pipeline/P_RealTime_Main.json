@@ -30,7 +30,17 @@
 									"referenceName": "Real-Time Actual Load",
 									"type": "PipelineReference"
 								},
-								"waitOnCompletion": true
+								"waitOnCompletion": true,
+								"parameters": {
+									"folderName": {
+										"value": "@concat('lnd/', utcnow('yyyy_MM_dd_hh_mm_ss'))",
+										"type": "Expression"
+									},
+									"fileName": {
+										"value": "@concat(item(),'pal_csv')",
+										"type": "Expression"
+									}
+								}
 							}
 						}
 					]

@@ -1,0 +1,10 @@
+{
+	"name": "AAG Data Lake",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://aagstore.dfs.core.windows.net"
+		}
+	}
+}

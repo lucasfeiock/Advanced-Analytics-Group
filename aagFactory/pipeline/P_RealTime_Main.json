@@ -95,7 +95,7 @@
 						"referenceName": "DS_TXT_NYISO_FileNames",
 						"type": "DatasetReference"
 					},
-					"firstRowOnly": true
+					"firstRowOnly": false
 				}
 			}
 		],

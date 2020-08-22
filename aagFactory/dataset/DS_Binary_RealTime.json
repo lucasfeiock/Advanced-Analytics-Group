@@ -1,0 +1,25 @@
+{
+	"name": "DS_Binary_RealTime",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "nyiso",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"fileName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": {
+					"value": "@concat('csv/pal/',dataset().fileName,'pal_csv.zip')",
+					"type": "Expression"
+				}
+			}
+		}
+	}
+}

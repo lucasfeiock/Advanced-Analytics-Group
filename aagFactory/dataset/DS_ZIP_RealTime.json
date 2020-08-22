@@ -1,5 +1,5 @@
 {
-	"name": "RealTimeBinary",
+	"name": "DS_ZIP_RealTime",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "nyiso",

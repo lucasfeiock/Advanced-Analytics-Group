@@ -19,10 +19,6 @@
 					"value": "@concat('csv/pal/',dataset().fileName,'pal_csv.zip')",
 					"type": "Expression"
 				}
-			},
-			"compression": {
-				"type": "ZipDeflate",
-				"level": "Optimal"
 			}
 		}
 	}

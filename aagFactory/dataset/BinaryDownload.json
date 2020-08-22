@@ -20,7 +20,14 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "lnd",
+				"fileName": {
+					"value": "@dataset().fileName",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().folderName",
+					"type": "Expression"
+				},
 				"fileSystem": "nyiso"
 			}
 		}

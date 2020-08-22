@@ -9,6 +9,10 @@
 			"fileName": {
 				"type": "string",
 				"defaultValue": "nyiso.zip"
+			},
+			"folderName": {
+				"type": "string",
+				"defaultValue": "lnd"
 			}
 		},
 		"annotations": [],

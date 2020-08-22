@@ -44,7 +44,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"url": {
-								"value": "@pipeline().parameters.fileName",
+								"value": "@concat(pipeline().parameters.fileName, '.zip' )",
 								"type": "Expression"
 							}
 						}
@@ -56,7 +56,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"fileName": {
-								"value": "@pipeline().parameters.fileName",
+								"value": "@concat(pipeline().parameters.fileName, '.csv')",
 								"type": "Expression"
 							},
 							"folderName": {
@@ -75,7 +75,7 @@
 			},
 			"fileName": {
 				"type": "string",
-				"defaultValue": "20200801pal_csv.zip"
+				"defaultValue": "20200801pal_csv"
 			}
 		},
 		"annotations": []

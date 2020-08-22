@@ -30,12 +30,6 @@
 							}
 						}
 					},
-					"sink": {
-						"type": "BinarySink",
-						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
-						}
-					},
 					"enableStaging": false
 				},
 				"inputs": [
@@ -45,22 +39,6 @@
 						"parameters": {
 							"url": {
 								"value": "@concat(pipeline().parameters.fileName, '.zip' )",
-								"type": "Expression"
-							}
-						}
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "BinaryDownload",
-						"type": "DatasetReference",
-						"parameters": {
-							"fileName": {
-								"value": "@concat(pipeline().parameters.fileName, '.csv')",
-								"type": "Expression"
-							},
-							"folderName": {
-								"value": "@pipeline().parameters.folderName",
 								"type": "Expression"
 							}
 						}

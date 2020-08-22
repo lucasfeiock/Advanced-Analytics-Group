@@ -1,0 +1,21 @@
+{
+	"name": "RealTimeBinary",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "nyiso",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "http://mis.nyiso.com/public/csv/pal/"
+			},
+			"compression": {
+				"type": "ZipDeflate",
+				"level": "Optimal"
+			}
+		}
+	}
+}

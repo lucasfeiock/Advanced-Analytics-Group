@@ -27,7 +27,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"pipeline": {
-									"referenceName": "Real-Time Actual Load",
+									"referenceName": "P_Real-Time Actual Load",
 									"type": "PipelineReference"
 								},
 								"waitOnCompletion": true,

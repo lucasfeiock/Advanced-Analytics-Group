@@ -80,7 +80,7 @@
 										"type": "Expression"
 									},
 									"fileName": {
-										"value": "@pipeline().parameters.fileName",
+										"value": "@concat(pipeline().parameters.fileName,'.csv')",
 										"type": "Expression"
 									}
 								}
@@ -91,11 +91,11 @@
 				"parameters": {
 					"fileName": {
 						"type": "string",
-						"defaultValue": "20200801pal_csv"
+						"defaultValue": "20200801"
 					},
 					"folderName": {
 						"type": "string",
-						"defaultValue": "lnd"
+						"defaultValue": "lnd/2020_08_22_05_00_00"
 					}
 				},
 				"annotations": []
@@ -128,6 +128,8 @@
 								"value": "@variables('fileNames')",
 								"type": "Expression"
 							},
+							"isSequential": false,
+							"batchCount": 5,
 							"activities": [
 								{
 									"name": "Execute Real-Time Actual Load",
@@ -141,12 +143,12 @@
 										},
 										"waitOnCompletion": true,
 										"parameters": {
-											"folderName": {
-												"value": "@concat('lnd/', utcnow('yyyy_MM_dd_hh_mm_ss'))",
+											"fileName": {
+												"value": "@item().Prop_0",
 												"type": "Expression"
 											},
-											"fileName": {
-												"value": "@concat(item(),'pal_csv')",
+											"folderName": {
+												"value": "@variables('folderName')",
 												"type": "Expression"
 											}
 										}
@@ -170,7 +172,7 @@
 						"typeProperties": {
 							"variableName": "fileNames",
 							"value": {
-								"value": "@activity('Lookup File Names').output",
+								"value": "@activity('Lookup File Names').output.value",
 								"type": "Expression"
 							}
 						}
@@ -178,7 +180,14 @@
 					{
 						"name": "Lookup File Names",
 						"type": "Lookup",
-						"dependsOn": [],
+						"dependsOn": [
+							{
+								"activity": "Set Folder Name",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
 						"policy": {
 							"timeout": "7.00:00:00",
 							"retry": 0,
@@ -205,6 +214,19 @@
 							},
 							"firstRowOnly": false
 						}
+					},
+					{
+						"name": "Set Folder Name",
+						"type": "SetVariable",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"variableName": "folderName",
+							"value": {
+								"value": "@concat('lnd/', utcnow('yyyy_MM_dd_hh_mm_ss'))",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"variables": {
@@ -214,6 +236,9 @@
 					},
 					"fileNames": {
 						"type": "Array"
+					},
+					"folderName": {
+						"type": "String"
 					}
 				},
 				"annotations": []

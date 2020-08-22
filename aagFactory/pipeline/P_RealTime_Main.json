@@ -35,7 +35,7 @@
 								"waitOnCompletion": true,
 								"parameters": {
 									"fileName": {
-										"value": "@item()",
+										"value": "@item().Prop_0",
 										"type": "Expression"
 									},
 									"folderName": {

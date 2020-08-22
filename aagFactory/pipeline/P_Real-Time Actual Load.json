@@ -67,7 +67,7 @@
 		"parameters": {
 			"fileName": {
 				"type": "string",
-				"defaultValue": "20200801pal_csv"
+				"defaultValue": "20200801"
 			},
 			"folderName": {
 				"type": "string",

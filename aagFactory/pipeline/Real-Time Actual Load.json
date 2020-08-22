@@ -23,7 +23,11 @@
 							"requestMethod": "GET"
 						},
 						"formatSettings": {
-							"type": "BinaryReadSettings"
+							"type": "BinaryReadSettings",
+							"compressionProperties": {
+								"type": "ZipDeflateReadSettings",
+								"preserveZipFileNameAsFolder": false
+							}
 						}
 					},
 					"sink": {
@@ -36,10 +40,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "RealTimeBinary",
+						"referenceName": "DS_ZIP_RealTime",
 						"type": "DatasetReference",
 						"parameters": {
-							"url": "csv/pal/20200801pal_csv.zip"
+							"url": {
+								"value": "@pipeline().parameters.fileName",
+								"type": "Expression"
+							}
 						}
 					}
 				],
@@ -48,13 +55,29 @@
 						"referenceName": "BinaryDownload",
 						"type": "DatasetReference",
 						"parameters": {
-							"fileName": "nyiso.zip",
-							"folderName": "lnd"
+							"fileName": {
+								"value": "@pipeline().parameters.fileName",
+								"type": "Expression"
+							},
+							"folderName": {
+								"value": "@pipeline().parameters.folderName",
+								"type": "Expression"
+							}
 						}
 					}
 				]
 			}
 		],
+		"parameters": {
+			"folderName": {
+				"type": "string",
+				"defaultValue": "lnd/2020_08_22_05_00_00"
+			},
+			"fileName": {
+				"type": "string",
+				"defaultValue": "20200801pal_csv.zip"
+			}
+		},
 		"annotations": []
 	}
 }

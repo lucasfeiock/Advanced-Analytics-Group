@@ -39,7 +39,7 @@
 										"type": "Expression"
 									},
 									"folderName": {
-										"value": "@concat('lnd/', utcnow('yyyy_MM_dd_hh_mm_ss'))",
+										"value": "@variables('folderName')",
 										"type": "Expression"
 									}
 								}
@@ -71,7 +71,14 @@
 			{
 				"name": "Lookup File Names",
 				"type": "Lookup",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Set Folder Name",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -97,6 +104,19 @@
 					},
 					"firstRowOnly": false
 				}
+			},
+			{
+				"name": "Set Folder Name",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "folderName",
+					"value": {
+						"value": "@concat('lnd/', utcnow('yyyy_MM_dd_hh_mm_ss'))",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"variables": {
@@ -106,6 +126,9 @@
 			},
 			"fileNames": {
 				"type": "Array"
+			},
+			"folderName": {
+				"type": "String"
 			}
 		},
 		"annotations": []

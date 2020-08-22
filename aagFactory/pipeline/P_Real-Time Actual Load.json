@@ -1,5 +1,5 @@
 {
-	"name": "Real-Time Actual Load",
+	"name": "P_Real-Time Actual Load",
 	"properties": {
 		"description": "http://mis.nyiso.com/public/P-58Blist.htm",
 		"activities": [
@@ -31,19 +31,7 @@
 						}
 					},
 					"enableStaging": false
-				},
-				"inputs": [
-					{
-						"referenceName": "DS_ZIP_RealTime",
-						"type": "DatasetReference",
-						"parameters": {
-							"url": {
-								"value": "@concat(pipeline().parameters.fileName, '.zip' )",
-								"type": "Expression"
-							}
-						}
-					}
-				]
+				}
 			}
 		],
 		"parameters": {

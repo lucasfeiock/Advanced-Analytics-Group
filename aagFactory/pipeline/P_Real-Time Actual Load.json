@@ -17,26 +17,22 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "DelimitedTextSource",
+						"type": "BinarySource",
 						"storeSettings": {
-							"type": "AzureBlobFSReadSettings",
-							"recursive": true
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
 						},
 						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
+							"type": "BinaryReadSettings"
 						}
 					},
 					"enableStaging": false
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_CSV_RealTime",
+						"referenceName": "DS_Binary_RealTime",
 						"type": "DatasetReference",
 						"parameters": {
-							"folderName": {
-								"value": "@pipeline().parameters.folderName",
-								"type": "Expression"
-							},
 							"fileName": {
 								"value": "@pipeline().parameters.fileName",
 								"type": "Expression"
@@ -47,13 +43,13 @@
 			}
 		],
 		"parameters": {
-			"folderName": {
-				"type": "string",
-				"defaultValue": "lnd/2020_08_22_05_00_00"
-			},
 			"fileName": {
 				"type": "string",
 				"defaultValue": "20200801pal_csv"
+			},
+			"folderName": {
+				"type": "string",
+				"defaultValue": "lnd"
 			}
 		},
 		"annotations": []

@@ -56,7 +56,7 @@
 								"type": "Expression"
 							},
 							"fileName": {
-								"value": "@pipeline().parameters.fileName",
+								"value": "@concat(pipeline().parameters.fileName,'.csv')",
 								"type": "Expression"
 							}
 						}

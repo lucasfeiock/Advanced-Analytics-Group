@@ -1,0 +1,24 @@
+{
+	"name": "BinaryDownload",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AAG Data Lake",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"fileName": {
+				"type": "string",
+				"defaultValue": "nyiso.zip"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "lnd",
+				"fileSystem": "nyiso"
+			}
+		}
+	}
+}

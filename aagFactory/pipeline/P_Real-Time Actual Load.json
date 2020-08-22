@@ -71,7 +71,7 @@
 			},
 			"folderName": {
 				"type": "string",
-				"defaultValue": "lnd"
+				"defaultValue": "lnd/2020_08_22_05_00_00"
 			}
 		},
 		"annotations": []

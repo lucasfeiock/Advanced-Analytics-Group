@@ -19,6 +19,8 @@
 						"value": "@variables('fileNames')",
 						"type": "Expression"
 					},
+					"isSequential": false,
+					"batchCount": 5,
 					"activities": [
 						{
 							"name": "Execute Real-Time Actual Load",
@@ -61,7 +63,7 @@
 				"typeProperties": {
 					"variableName": "fileNames",
 					"value": {
-						"value": "@activity('Lookup File Names').output",
+						"value": "@activity('Lookup File Names').output.value",
 						"type": "Expression"
 					}
 				}

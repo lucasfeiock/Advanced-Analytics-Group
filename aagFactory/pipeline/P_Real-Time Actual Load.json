@@ -23,22 +23,13 @@
 							"requestMethod": "GET"
 						},
 						"formatSettings": {
-							"type": "BinaryReadSettings",
-							"compressionProperties": {
-								"type": "ZipDeflateReadSettings",
-								"preserveZipFileNameAsFolder": false
-							}
+							"type": "BinaryReadSettings"
 						}
 					},
 					"sink": {
-						"type": "DelimitedTextSink",
+						"type": "BinarySink",
 						"storeSettings": {
 							"type": "AzureBlobFSWriteSettings"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
 						}
 					},
 					"enableStaging": false
@@ -57,7 +48,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_CSV_RealTime",
+						"referenceName": "DS_LAKE_RealTime",
 						"type": "DatasetReference",
 						"parameters": {
 							"folderName": {

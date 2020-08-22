@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@variables('fileNames').Prop_0",
+						"value": "@variables('fileNames')",
 						"type": "Expression"
 					},
 					"isSequential": false,
@@ -34,12 +34,12 @@
 								},
 								"waitOnCompletion": true,
 								"parameters": {
-									"folderName": {
-										"value": "@concat('lnd/', utcnow('yyyy_MM_dd_hh_mm_ss'))",
+									"fileName": {
+										"value": "@concat(item().Prop_0,'pal_csv')",
 										"type": "Expression"
 									},
-									"fileName": {
-										"value": "@concat(item(),'pal_csv')",
+									"folderName": {
+										"value": "@concat('lnd/', utcnow('yyyy_MM_dd_hh_mm_ss'))",
 										"type": "Expression"
 									}
 								}

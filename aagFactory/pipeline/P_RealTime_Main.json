@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@variables('fileNames')",
+						"value": "@variables('fileNames').Prop_0",
 						"type": "Expression"
 					},
 					"isSequential": false,

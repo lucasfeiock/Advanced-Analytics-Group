@@ -5,6 +5,12 @@
 			"referenceName": "nyiso",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"url": {
+				"type": "string",
+				"defaultValue": "csv/pal/20200801pal_csv.zip"
+			}
+		},
 		"annotations": [],
 		"type": "Binary",
 		"typeProperties": {

@@ -16,7 +16,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "http://mis.nyiso.com/public/csv/pal/"
+				"relativeUrl": "csv/pal/20200801pal_csv.zip"
 			},
 			"compression": {
 				"type": "ZipDeflate",

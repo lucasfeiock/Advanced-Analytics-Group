@@ -35,7 +35,7 @@
 								"waitOnCompletion": true,
 								"parameters": {
 									"fileName": {
-										"value": "@concat(item(),'pal_csv')",
+										"value": "@item()",
 										"type": "Expression"
 									},
 									"folderName": {

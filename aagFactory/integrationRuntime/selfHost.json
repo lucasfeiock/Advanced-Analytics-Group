@@ -1,0 +1,7 @@
+{
+	"name": "selfHost",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "this is a test for self hosting integration runtime"
+	}
+}
